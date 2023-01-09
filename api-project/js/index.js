@@ -1,4 +1,4 @@
-const URLs = "https://pokeapi.co/api/v2/pokemon/ditto";
+const URLs = "https://pokeapi.co/api/v2/pokemon";
 
 async function getData(URLs) {
   try {
