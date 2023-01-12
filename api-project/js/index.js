@@ -33,3 +33,23 @@ const putQuoteInHTML = async () => {
   apiResponseDOM.innerHTML = `Quote: ${quote.description}`;
 };
 putQuoteInHTML();
+
+// const quote = await fetchData(apiEntry);
+// const buttons = {
+//   createcards: function () {
+//     quote.forEach((quote) => {
+//       DOMselectors.box.insertAdjacentHTML(
+//         "beforeend",
+//         `<div class="inner" data-aos="flip-up">
+//           <p>${quote.name}</p>
+//           <p>${quote.description}</p>
+//           <p>${quote.vision}</p>
+//         </div>`
+//       );
+//     });
+//   },
+// };
+
+// console.log(buttons);
+
+buttons.createcards();
