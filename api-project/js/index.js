@@ -30,26 +30,13 @@ const apiResponseDOM = document.getElementById("api-response");
 const putQuoteInHTML = async () => {
   // defining an async arrow function
   const quote = await fetchData(apiEntry);
-  apiResponseDOM.innerHTML = `Quote: ${quote.description}`;
+  apiResponseDOM.innerHTML = `<div class="inner" data-aos="flip-up">
+  <p>${quote.name}</p>
+  <p>Type: ${quote.vision}</p>
+  <p>${quote.description}</p>
+</div>`;
 };
 putQuoteInHTML();
 
-// const quote = await fetchData(apiEntry);
-// const buttons = {
-//   createcards: function () {
-//     quote.forEach((quote) => {
-//       DOMselectors.box.insertAdjacentHTML(
-//         "beforeend",
-//         `<div class="inner" data-aos="flip-up">
-//           <p>${quote.name}</p>
-//           <p>${quote.description}</p>
-//           <p>${quote.vision}</p>
-//         </div>`
-//       );
-//     });
-//   },
-// };
-
-// console.log(buttons);
-
-buttons.createcards();
+const realAPI = `${apiEntry}ningguang`;
+console.log(realAPI);
