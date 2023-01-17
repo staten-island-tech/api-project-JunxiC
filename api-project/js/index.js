@@ -1,7 +1,11 @@
 // Below is an entry point to an api that generates random quotes.
 // APIs are usually accessible with a HTML/website link.
 // (If you open this in a browser, you will get raw object data.)
-const apiEntry = "https://api.genshin.dev/characters/razor";
+const apiEntry = "https://api.genshin.dev/characters/";
+const character = document.querySelector("#character").value;
+
+const realAPI = `${apiEntry}${character}`;
+console.log(realAPI);
 
 // fetch is a function (that you've seen previously) that can retrieve
 // data from an api entry point.
@@ -29,7 +33,7 @@ fetchData(apiEntry);
 const apiResponseDOM = document.getElementById("api-response");
 const putQuoteInHTML = async () => {
   // defining an async arrow function
-  const quote = await fetchData(apiEntry);
+  const quote = await fetchData(realAPI);
   apiResponseDOM.innerHTML = `<div class="inner" data-aos="flip-up">
   <p>${quote.name}</p>
   <p>Type: ${quote.vision}</p>
@@ -37,6 +41,3 @@ const putQuoteInHTML = async () => {
 </div>`;
 };
 putQuoteInHTML();
-
-const realAPI = `${apiEntry}ningguang`;
-console.log(realAPI);
