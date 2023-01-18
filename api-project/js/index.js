@@ -1,5 +1,8 @@
 // Below is an entry point to an api that generates random quotes.
 // APIs are usually accessible with a HTML/website link.
+
+import { DOMSelectors } from "./DOM";
+
 // (If you open this in a browser, you will get raw object data.)
 const apiEntry = "https://api.genshin.dev/characters/";
 const character = document.querySelector("#character").value;
@@ -41,3 +44,8 @@ const putQuoteInHTML = async () => {
 </div>`;
 };
 putQuoteInHTML();
+
+DOMSelectors.button2.addEventListener("click", function (event) {
+  clearInput();
+  event.preventDefault();
+});
