@@ -42,6 +42,7 @@ DOMSelectors.button2.addEventListener("click", function () {
   <p>Weapon: ${quote.weapon}</p>
   <p>Nation: ${quote.nation}</p>
   <p>${quote.description}</p>
+  <p class="bold">${quote.rarity} Star</p>
 </div>`;
   };
   putQuoteInHTML();
