@@ -98,7 +98,7 @@ h1{
 }
 
 .bold{
-  color: gold;
+  color: var(--color);
   font-size: 4rem;
   font-style: oblique;
 }
