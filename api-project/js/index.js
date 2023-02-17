@@ -27,7 +27,12 @@ DOMSelectors.button2.addEventListener("click", function () {
       console.log(data);
       return data;
     } catch (err) {
-      console.error(err);
+      const apiResponseDOM = document.getElementById("api-response");
+      const putQuoteInHTML = async () => {
+        apiResponseDOM.innerHTML = `<div class="inner" data-aos="flip-up">l bozo</div>`;
+        putQuoteInHTML();
+        console.error(err);
+      };
     }
   }
   fetchData(apiEntry);
@@ -36,13 +41,13 @@ DOMSelectors.button2.addEventListener("click", function () {
   const putQuoteInHTML = async () => {
     const quote = await fetchData(realAPI);
     apiResponseDOM.innerHTML = `<div class="inner" data-aos="flip-up">
-  <p>${quote.name}</p>
-  <p>${quote.title}</p>
-  <p>Type: ${quote.vision}</p>
-  <p>Weapon: ${quote.weapon}</p>
-  <p>Nation: ${quote.nation}</p>
-  <p>${quote.description}</p>
-  <p class="bold">${quote.rarity} Star</p>
+  <h5>${quote.name}</h5>
+  <h5>${quote.title}</h5>
+  <h5>Type: ${quote.vision}</h5>
+  <h5>Weapon: ${quote.weapon}</h5>
+  <h5>Nation: ${quote.nation}</h5>
+  <h5>${quote.description}</h5>
+  <h5 class="bold">${quote.rarity} Star</h5>
 </div>`;
   };
   putQuoteInHTML();
